@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Editar Área - AgroStock</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="/">
+            🌱 AgroStock
+        </a>
+
+        <div>
+
+            <a href="/areas" class="btn btn-light btn-sm">
+                Áreas
+            </a>
+
+            <a href="/plantios" class="btn btn-light btn-sm">
+                Plantios
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card shadow">
+
+                <div class="card-body">
+
+                    <h2 class="text-center mb-4">
+                        ✏️ Editar Área de Cultivo
+                    </h2>
+
+                    <form action="/areas/edit/<%= area.id %>" method="POST">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Nome
+                            </label>
+
+                            <input
+                                type="text"
+                                name="nome"
+                                class="form-control"
+                                value="<%= area.nome %>"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Localização
+                            </label>
+
+                            <input
+                                type="text"
+                                name="localizacao"
+                                class="form-control"
+                                value="<%= area.localizacao %>"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Tamanho (m²)
+                            </label>
+
+                            <input
+                                type="number"
+                                step="0.01"
+                                name="tamanho"
+                                class="form-control"
+                                value="<%= area.tamanho %>"
+                                required>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn btn-warning w-100">
+
+                            Salvar Alterações
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
